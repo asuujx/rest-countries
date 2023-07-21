@@ -11,9 +11,9 @@ const Country = ({ data }: Props) => {
   return (
     <div className="bg-white shadow-md rounded mx-14 w-fit pb-5">
       <img src={flags[1]} className="rounded-t max-h-52" />
-      <div className="px-3">
-        <p className="font-bold text-lg my-4">{name.common}</p>
-        <div className="mb-5">
+      <div className="px-6">
+        <p className="font-extrabold text-lg my-4">{name.common}</p>
+        <div className="mb-8">
           <div className="flex gap-1">
             <p className="font-semibold">Population: </p>
             <p>{sepPopulation}</p>

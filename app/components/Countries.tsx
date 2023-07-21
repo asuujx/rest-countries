@@ -21,7 +21,7 @@ const Countries = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-10">
+    <div className="grid gap-10 place-items-center">
       {countries.map((country) => (
         <Country key={country.name.common} data={country} />
       ))}
