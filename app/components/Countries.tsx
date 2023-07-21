@@ -1,28 +1,23 @@
-"use client";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { CountryType } from "@/types";
 import Country from "./Country";
 
-const Countries = () => {
-  const [countries, setCountries] = useState<any[]>([]);
+const fetchCountries = async () => {
+  const response = await fetch("https://restcountries.com/v3/all");
 
-  useEffect(() => {
-    const fetchCountries = async () => {
-      try {
-        const response = await axios.get("https://restcountries.com/v3/all");
-        setCountries(response.data);
-        console.log(response.data);
-      } catch (error) {
-        console.error("Error fetching countries", error);
-      }
-    };
+  if (!response.ok) {
+    throw new Error("Failed to fetch data");
+  }
 
-    fetchCountries();
-  }, []);
+  return response.json();
+};
+
+const Countries = async () => {
+  const data = (await fetchCountries()) as CountryType[];
+  console.log(data);
 
   return (
     <div className="grid gap-10 place-items-center">
-      {countries.map((country) => (
+      {data.map((country) => (
         <Country key={country.name.common} data={country} />
       ))}
     </div>

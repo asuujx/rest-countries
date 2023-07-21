@@ -1,5 +1,5 @@
 
-export interface Country {
+export interface CountryType {
   name: {
     common: string;
   };
@@ -12,4 +12,5 @@ export interface Country {
   languages: string[];
   borders: string[];
   flags: string[];
+  cca3: string;
 };

@@ -1,12 +1,14 @@
-import { Country } from "@/types";
+import { CountryType } from "@/types";
 
 type Props = {
-  data: Country;
+  data: CountryType;
 };
 
 const Country = ({ data }: Props) => {
   const { name, capital, population, region, flags } = data;
   const sepPopulation = population.toLocaleString();
+
+  // console.log(data.name);
 
   return (
     <div className="bg-white shadow-md rounded mx-14 w-fit pb-5">
