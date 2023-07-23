@@ -1,21 +1,24 @@
-import { CountryType } from "@/types";
+import { CountryDetails } from "@/types";
 
 interface Props {
-  data: CountryType;
+  data: CountryDetails;
 }
 
 const CountryDetail = async ({ data }: Props) => {
-  const { name, capital, population, region, languages, flags, subregion, tld } = data;
+  const { name, tld, currencies, capital, region, subregion, languages, population, flags } = data;
   const sepPopulation = population.toLocaleString();
-
+  const currency = Object.values(currencies);
+  const nativeName = name.nativeName;
+  const nativeNameCommon = nativeName[Object.keys(nativeName)[0]].common;
+  
   return (
-    <div className="">
-      <img src={flags[0]} className="rounded-t max-h-52" />
+    <div className="mt-14">
+      <img src={flags.png} className="rounded-t w-screen mb-10" />
       <p className="text-xl font-extrabold mb-4">{name.common}</p>
       <div className="flex flex-col gap-2 mb-10">
         <div className="flex gap-1">
           <p className="font-semibold">Native Name: </p>
-          <p>PLACEHOLDER</p>
+          <p>{nativeNameCommon}</p>
         </div>
         <div className="flex gap-1">
           <p className="font-semibold">Population: </p>
@@ -41,7 +44,7 @@ const CountryDetail = async ({ data }: Props) => {
         </div>
         <div className="flex gap-1">
           <p className="font-semibold">Currencies:</p>
-          {/* <p>{currencies.values.join(", ")}</p> */}
+          <p>{currency[0].name}</p>
         </div>
         <div className="flex gap-1">
           <p className="font-semibold">Languages: </p>

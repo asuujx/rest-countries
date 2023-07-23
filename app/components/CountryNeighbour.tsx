@@ -1,4 +1,4 @@
-import { CountryType } from "@/types";
+import { CountryDetails } from "@/types";
 
 type Props = {
   code: string;
@@ -11,14 +11,14 @@ const fetchNeighbour = async (code: string) => {
     throw new Error("Failed to fetch data");
   }
 
-  const data = (await response.json()) as CountryType[];
+  const data = (await response.json()) as CountryDetails[];
 
   return data[0];
 };
 
 const CountryNeighbour = async ({ code }: Props) => {
-  const neighbourData = (await fetchNeighbour(code)) as CountryType;
-//   console.log(neighbourData);
+  const neighbourData = (await fetchNeighbour(code)) as CountryDetails;
+  // console.log(neighbourData);
 
   return <div className="bg-white shadow-md rounded text-center py-1">{neighbourData.name.common}</div>;
 };

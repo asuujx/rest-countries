@@ -1,4 +1,4 @@
-import { CountryType } from "@/types";
+import { CountryDetails } from "@/types";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import CountryDetail from "../components/CountryDetail";
@@ -17,15 +17,19 @@ const fetchCountry = async (name: string) => {
     throw new Error("Failed to fetch data");
   }
 
-  const data = (await response.json()) as CountryType[];
+  const data = (await response.json()) as CountryDetails[];
 
   return data[0];
 };
 
 const CountryPage = async ({ params: { name } }: Props) => {
-  const countryData = (await fetchCountry(name)) as CountryType;
-  
-  console.log(countryData);
+  const countryData = (await fetchCountry(name)) as CountryDetails;
+  const countryName = countryData.name.nativeName;
+  const nativeNameCommon = countryName[Object.keys(countryName)[0]];
+
+    console.log(countryData);
+  // console.log(countryName);
+  // console.log(nativeNameCommon.common);
 
   return (
     <div className="bg-[hsl(0,0%,98%)] h-screen px-8">
