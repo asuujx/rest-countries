@@ -1,4 +1,5 @@
 import { CountryDetails } from "@/types";
+import Link from "next/link";
 
 type Props = {
   code: string;
@@ -20,7 +21,11 @@ const CountryNeighbour = async ({ code }: Props) => {
   const neighbourData = (await fetchNeighbour(code)) as CountryDetails;
   // console.log(neighbourData);
 
-  return <div className="bg-white shadow-md rounded text-center py-1">{neighbourData.name.common}</div>;
+  return (
+    <div className="bg-white shadow-md rounded text-center py-1">
+      <Link href={neighbourData.name.common}>{neighbourData.name.common}</Link>
+    </div>
+  );
 };
 
 export default CountryNeighbour;

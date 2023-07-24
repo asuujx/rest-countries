@@ -1,6 +1,7 @@
 import { CountryDetails } from "@/types";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 import CountryDetail from "../components/CountryDetail";
 import CountryNeighbour from "../components/CountryNeighbour";
 
@@ -27,16 +28,18 @@ const CountryPage = async ({ params: { name } }: Props) => {
   const countryName = countryData.name.nativeName;
   const nativeNameCommon = countryName[Object.keys(countryName)[0]];
 
-    console.log(countryData);
+  console.log(countryData);
   // console.log(countryName);
   // console.log(nativeNameCommon.common);
 
   return (
     <div className="bg-[hsl(0,0%,98%)] h-screen px-8">
-      <div className="flex gap-1 bg-white rounded shadow-md w-fit px-4 py-2">
-        <FontAwesomeIcon icon={faArrowLeft} className="w-3" />
-        <p>Back</p>
-      </div>
+      <Link href="/">
+        <div className="flex gap-1 bg-white rounded shadow-md w-fit px-4 py-2">
+          <FontAwesomeIcon icon={faArrowLeft} className="w-3" />
+          <p>Back</p>
+        </div>
+      </Link>
 
       <CountryDetail data={countryData} />
       <p className="mt-10 mb-4 font-semibold">Border Countries:</p>
