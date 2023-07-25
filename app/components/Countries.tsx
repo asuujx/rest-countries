@@ -1,6 +1,5 @@
 import { CountryType } from "@/types";
 import Country from "./Country";
-import Link from "next/link";
 
 const fetchCountries = async () => {
   const response = await fetch("https://restcountries.com/v3/all");

@@ -33,16 +33,16 @@ const CountryPage = async ({ params: { name } }: Props) => {
   // console.log(nativeNameCommon.common);
 
   return (
-    <div className="bg-[hsl(0,0%,98%)] h-screen px-8">
+    <div className="bg-[hsl(0,0%,98%)] h-screen px-8 py-8">
       <Link href="/">
-        <div className="flex gap-1 bg-white rounded shadow-md w-fit px-4 py-2">
+        <div className="flex gap-2 bg-white rounded shadow-md w-fit px-8 py-2">
           <FontAwesomeIcon icon={faArrowLeft} className="w-3" />
           <p>Back</p>
         </div>
       </Link>
 
       <CountryDetail data={countryData} />
-      <p className="mt-10 mb-4 font-semibold">Border Countries:</p>
+      <p className="mt-10 mb-4 font-bold">Border Countries:</p>
       <div className="grid grid-cols-3 gap-2">
         {countryData.borders.map((cca3) => (
           <CountryNeighbour key={cca3} code={cca3} />
