@@ -1,26 +1,24 @@
 import { CountryType } from "@/types";
 import Country from "./Country";
 
-const fetchCountries = async () => {
-  const response = await fetch("https://restcountries.com/v3/all");
-
-  if (!response.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  return response.json();
+type Props = {
+  data: CountryType[];
+  searchInput: string;
 };
 
-const Countries = async () => {
-  const data = (await fetchCountries()) as CountryType[];
-  console.log(data);
+const Countries = ({ data, searchInput }: Props) => {
+  const filteredCountries = data.filter((country) =>
+    country.name.common.toLowerCase().startsWith(searchInput)
+  );
+  
+//   const filterByContinent = filteredCountries.filter(country => country.region === value);
 
   return (
-    <div className="grid gap-10 place-items-center">
-      {data.map((country) => (
+    <>
+      {filteredCountries.map((country) => (
         <Country key={country.name.common} data={country} />
       ))}
-    </div>
+    </>
   );
 };
 

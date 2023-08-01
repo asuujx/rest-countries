@@ -28,7 +28,7 @@ const CountryPage = async ({ params: { name } }: Props) => {
   const countryName = countryData.name.nativeName;
   const nativeNameCommon = countryName[Object.keys(countryName)[0]];
 
-  console.log(countryData);
+  // console.log(countryData);
   // console.log(countryName);
   // console.log(nativeNameCommon.common);
 
