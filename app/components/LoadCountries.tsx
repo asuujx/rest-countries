@@ -5,6 +5,7 @@ import Countries from "./Countries";
 
 type Props = {
   searchInput: string;
+  option: string | null;
 }
 
 const fetchCountries = async () => {
@@ -17,7 +18,7 @@ const fetchCountries = async () => {
   return await(response.json()) as CountryType[];
 };
 
-const LoadCountries = ({ searchInput }: Props) => {
+const LoadCountries = ({ searchInput, option }: Props) => {
   const { isLoading, isError, error, data } = useQuery(
     ["countries"],
     fetchCountries
@@ -27,7 +28,7 @@ const LoadCountries = ({ searchInput }: Props) => {
 
   return (
     <div className="grid gap-10 place-items-center">
-      {data && <Countries data={data} searchInput={searchInput}/>}
+      {data && <Countries data={data} searchInput={searchInput} option={option} />}
     </div>
   );
 };
