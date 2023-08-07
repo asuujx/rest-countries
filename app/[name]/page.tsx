@@ -33,9 +33,9 @@ const CountryPage = async ({ params: { name } }: Props) => {
   // console.log(nativeNameCommon.common);
 
   return (
-    <div className="bg-[hsl(0,0%,98%)] h-screen px-8 py-8">
+    <div className="bg-[hsl(0,0%,98%)] h-full px-8 py-10">
       <Link href="/">
-        <div className="flex gap-2 bg-white rounded shadow-md w-fit px-8 py-2">
+        <div className="flex gap-3 place-items-center bg-white rounded shadow-md w-fit px-8 py-2">
           <FontAwesomeIcon icon={faArrowLeft} className="w-3" />
           <p>Back</p>
         </div>
@@ -44,9 +44,9 @@ const CountryPage = async ({ params: { name } }: Props) => {
       <CountryDetail data={countryData} />
       <p className="mt-10 mb-4 font-bold">Border Countries:</p>
       <div className="grid grid-cols-3 gap-2">
-        {countryData.borders.map((cca3) => (
+        {countryData.borders ? countryData.borders.map((cca3) => (
           <CountryNeighbour key={cca3} code={cca3} />
-        ))}
+        )) : <p className="grid col-span-2">No border countries.</p>}
       </div>
     </div>
   );

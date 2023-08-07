@@ -13,41 +13,41 @@ const CountryDetail = async ({ data }: Props) => {
   
   return (
     <div className="mt-16">
-      <img src={flags.png} className="rounded-t w-screen mb-10" />
+      <img src={flags.png} className="rounded-t w-screen mb-10 aspect-[5/3]" />
       <p className="text-xl font-extrabold mb-4">{name.common}</p>
       <div className="flex flex-col gap-2 mb-10">
         <div className="flex gap-1">
-          <p className="font-semibold">Native Name: </p>
+          <p className="font-bold">Native Name: </p>
           <p>{nativeNameCommon}</p>
         </div>
         <div className="flex gap-1">
-          <p className="font-semibold">Population: </p>
+          <p className="font-bold">Population: </p>
           <p>{sepPopulation}</p>
         </div>
         <div className="flex gap-1">
-          <p className="font-semibold">Region: </p>
+          <p className="font-bold">Region: </p>
           <p>{region}</p>
         </div>
         <div className="flex gap-1">
-          <p className="font-semibold">Sub Region:</p>
+          <p className="font-bold">Sub Region:</p>
           <p>{subregion}</p>
         </div>
         <div className="flex gap-1">
-          <p className="font-semibold">Capital: </p>
+          <p className="font-bold">Capital: </p>
           <p>{capital}</p>
         </div>
       </div>
       <div className="flex flex-col gap-2">
         <div className="flex gap-1">
-          <p className="font-semibold">Top Level Domain:</p>
+          <p className="font-bold">Top Level Domain:</p>
           <p>{tld}</p>
         </div>
         <div className="flex gap-1">
-          <p className="font-semibold">Currencies:</p>
+          <p className="font-bold">Currencies:</p>
           <p>{currency[0].name}</p>
         </div>
         <div className="flex gap-1">
-          <p className="font-semibold">Languages: </p>
+          <p className="font-bold">Languages: </p>
           <p>{Object.values(languages).join(", ")}</p>
         </div>
       </div>

@@ -10,16 +10,19 @@ const Search = ({ searchInput, inputHandler }: Props) => {
   
 
   return (
-    <div className="mb-8 pt-5 flex justify-center">
-      <div className="flex px-10 py-4 bg-white gap-6 shadow-md rounded">
-        <FontAwesomeIcon icon={faMagnifyingGlass} className="w-4" />
+    <div className="mb-10 pt-8 flex justify-center">
+      <div className="mx-6 px-10 py-4 flex gap-8 place-items-center bg-white shadow-md rounded-md w-screen text-lg">
+        <FontAwesomeIcon
+          icon={faMagnifyingGlass}
+          className="w-5 h-5 text-[#ACACAC]"
+        />
         <input
           type="text"
           onChange={inputHandler}
           value={searchInput}
           name="search"
           placeholder="Search for a country..."
-          className="bg-transparent"
+          className="bg-transparent placeholder-[#ACACAC] w-full"
         />
       </div>
     </div>

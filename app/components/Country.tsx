@@ -14,25 +14,32 @@ const Country = ({ data }: Props) => {
   return (
     <div className="bg-white shadow-md rounded mx-14 w-fit pb-5">
       <Link href={name.common}>
-        <img src={flags[1]} className="rounded-t max-h-52" />
-        <div className="px-6">
-          <p className="font-extrabold text-lg my-4">{name.common}</p>
-          <div className="mb-8">
-            <div className="flex gap-1">
-              <p className="font-semibold">Population: </p>
-              <p>{sepPopulation}</p>
-            </div>
-            <div className="flex gap-1">
-              <p className="font-semibold">Region: </p>
-              <p>{region}</p>
-            </div>
-            <div className="flex gap-1">
-              <p className="font-semibold">Capital: </p>
-              <p>{capital}</p>
-            </div>
-          </div>
+        <div className="h-44 w-72">
+          <img
+            src={flags[1]}
+            className="rounded-t w-full h-full object-fill"
+          />
         </div>
       </Link>
+      <div className="px-6">
+        <Link href={name.common}>
+          <p className="font-extrabold text-lg my-4">{name.common}</p>
+        </Link>
+        <div className="mb-8">
+          <div className="flex gap-1">
+            <p className="font-bold">Population: </p>
+            <p>{sepPopulation}</p>
+          </div>
+          <div className="flex gap-1">
+            <p className="font-bold">Region: </p>
+            <p>{region}</p>
+          </div>
+          <div className="flex gap-1">
+            <p className="font-bold">Capital: </p>
+            <p>{capital}</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
