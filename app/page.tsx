@@ -19,13 +19,14 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-[hsl(0,0%,98%)] w-full h-full lg:grid lg:place-items-center 2xl:grid 2xl:place-items-center">
-      <div className="w-full lg:flex lg:w-5/6 lg:justify-between lg:items-center 2xl:flex 2xl:w-3/4 2xl:justify-between 2xl:items-center transition-all ease-in-out">
-        <Search searchInput={searchInput} inputHandler={inputHandler} />
-        <Filter optionHandler={optionHandler} />
+    <div className="bg-[hsl(0,0%,98%)] min-h-screen">
+      <div className="lg:grid lg:place-items-center 2xl:grid 2xl:place-items-center">
+        <div className="w-full lg:flex lg:w-5/6 lg:justify-between lg:items-center 2xl:flex 2xl:w-3/4 2xl:justify-between 2xl:items-center transition-all ease-in-out">
+          <Search searchInput={searchInput} inputHandler={inputHandler} />
+          <Filter optionHandler={optionHandler} />
+        </div>
+        <LoadCountries searchInput={searchInput} option={filterOption} />
       </div>
-
-      <LoadCountries searchInput={searchInput} option={filterOption} />
     </div>
   );
 }
