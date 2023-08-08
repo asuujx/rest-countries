@@ -27,8 +27,12 @@ const LoadCountries = ({ searchInput, option }: Props) => {
   // console.log(data);
 
   return (
-    <div className="grid gap-10 place-items-center">
-      {data && <Countries data={data} searchInput={searchInput} option={option} />}
+    <div className="grid place-items-center">
+      <div className="mb-8 grid gap-10 place-items-center md:grid-cols-2 md:w-4/5 lg:grid-cols-3 lg:w-5/6 2xl:grid-cols-4 2xl:w-3/4 transition-all ease-in-out">
+        {data && (
+          <Countries data={data} searchInput={searchInput} option={option} />
+        )}
+      </div>
     </div>
   );
 };
