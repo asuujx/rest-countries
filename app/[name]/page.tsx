@@ -1,9 +1,8 @@
 import { CountryDetails } from "@/types";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
+import BackButton from "../components/BackButton";
 import CountryDetail from "../components/CountryDetail";
 import CountryNeighbour from "../components/CountryNeighbour";
+import Header from "../components/Header/Header";
 
 type Props = {
   params: {
@@ -33,20 +32,38 @@ const CountryPage = async ({ params: { name } }: Props) => {
   // console.log(nativeNameCommon.common);
 
   return (
-    <div className="bg-[hsl(0,0%,98%)] h-full px-8 py-10">
-      <Link href="/">
-        <div className="flex gap-3 place-items-center bg-white rounded shadow-md w-fit px-8 py-2">
-          <FontAwesomeIcon icon={faArrowLeft} className="w-3" />
-          <p>Back</p>
-        </div>
-      </Link>
+    <div className="bg-[hsl(0,0%,98%)] min-h-screen">
+      <Header />
+      <div className="lg:grid lg:place-items-center 2xl:grid 2xl:place-items-center transition-all ease-in-out">
+        <div className="px-8 py-10 lg:w-4/5 2xl:w-3/4">
+          <BackButton />
 
-      <CountryDetail data={countryData} />
-      <p className="mt-10 mb-4 font-bold">Border Countries:</p>
-      <div className="grid grid-cols-3 gap-2">
-        {countryData.borders ? countryData.borders.map((cca3) => (
-          <CountryNeighbour key={cca3} code={cca3} />
-        )) : <p className="grid col-span-2">No border countries.</p>}
+          <div className="lg:flex lg:gap-28 2xl:flex 2xl:gap-28">
+            <img
+              src={countryData.flags.png}
+              className="mb-10 aspect-[5/3] w-full max-w-md lg:w-fit lg:h-fit 2xl:w-fit 2xl:h-fit transition-all ease-in-out"
+            />
+            <div className="">
+              <CountryDetail data={countryData} />
+              <div className="lg:flex lg:gap-4 2xl:flex 2xl:gap-4">
+                <p className="text-xl mb-4 font-bold lg:text-base lg:min-w-fit lg:mt-2 2xl:text-base 2xl:min-w-fit 2xl:mt-2">
+                  Border Countries:
+                </p>
+                <div className="grid grid-cols-3 gap-2 lg:flex lg:flex-wrap 2xl:flex 2xl:flex-wrap">
+                  {countryData.borders ? (
+                    countryData.borders.map((cca3) => (
+                      <CountryNeighbour key={cca3} code={cca3} />
+                    ))
+                  ) : (
+                    <p className="grid col-span-2 lg:mt-2 2xl:mt-2">
+                      No border countries.
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -20,7 +20,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={nunito.className}>
         <QueryProvider>
-          <Header />
           {children}
         </QueryProvider>
       </body>

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Filter from "./components/Filter";
+import Header from "./components/Header/Header";
 import LoadCountries from "./components/LoadCountries";
 import Search from "./components/Search";
 
@@ -20,6 +21,7 @@ export default function Home() {
 
   return (
     <div className="bg-[hsl(0,0%,98%)] min-h-screen">
+      <Header />
       <div className="lg:grid lg:place-items-center 2xl:grid 2xl:place-items-center">
         <div className="w-full lg:flex lg:w-5/6 lg:justify-between lg:items-center 2xl:flex 2xl:w-3/4 2xl:justify-between 2xl:items-center transition-all ease-in-out">
           <Search searchInput={searchInput} inputHandler={inputHandler} />
