@@ -5,12 +5,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 
 function DarkMode() {
-  const [darkToggle, setDarkToggle] = useState(false);
+  const [darkToggle, setDarkToggle] = useState(
+    localStorage.getItem("theme") === "dark"
+  );
 
   useEffect(() => {
     if (darkToggle) {
       document.body.classList.add("dark");
-    } else document.body.classList.remove("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.body.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    } 
   }, [darkToggle]);
 
   return (
