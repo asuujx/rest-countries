@@ -4,7 +4,7 @@ import DarkMode from "./DarkMode";
 
 const Header = () => {
   return (
-    <div className="relative z-10 shadow-md">
+    <div className="relative bg-white z-10 shadow-md dark:dark:bg-[hsl(209,23%,22%)]">
       <div className="lg:w-5/6 lg:m-auto 2xl:w-3/4 2xl:m-auto transition-all ease-in-out">
         <div className="w-full flex justify-between py-8 px-4">
           <Link

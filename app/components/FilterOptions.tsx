@@ -14,9 +14,13 @@ type Props = {
 function FilterOptions({ optionHandler }: Props) {
   return (
     <div className="absolute mt-2">
-      <div className="flex flex-col gap-1 ml-6 bg-white shadow-md w-56 rounded-md py-4">
+      <div className="flex flex-col gap-1 ml-6 bg-white shadow-md w-56 rounded-md py-4 dark:bg-[hsl(209,23%,22%)]">
         {options.map((option, index) => (
-          <button className="text-left pl-6" onClick={() => optionHandler(option.value)} key={index}>
+          <button
+            className="text-left pl-6"
+            onClick={() => optionHandler(option.value)}
+            key={index}
+          >
             {option.name}
           </button>
         ))}

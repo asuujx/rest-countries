@@ -12,13 +12,10 @@ const Country = ({ data }: Props) => {
   // console.log(data.name);
 
   return (
-    <div className="bg-white shadow-md rounded mx-14 w-fit pb-5">
+    <div className="bg-white shadow-md rounded mx-14 w-fit pb-5 dark:dark:bg-[hsl(209,23%,22%)]">
       <Link href={name.common}>
         <div className="h-44 w-72">
-          <img
-            src={flags[1]}
-            className="rounded-t w-full h-full object-fill"
-          />
+          <img src={flags[1]} className="rounded-t w-full h-full object-fill" />
         </div>
       </Link>
       <div className="px-6">
