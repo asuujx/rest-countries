@@ -32,7 +32,7 @@ const CountryPage = async ({ params: { name } }: Props) => {
   // console.log(nativeNameCommon.common);
 
   return (
-    <div className="bg-[hsl(0,0%,98%)] min-h-screen">
+    <div className="bg-[hsl(0,0%,98%)] min-h-screen dark:bg-[hsl(207,26%,17%)] dark:text-[hsl(0,0%,100%)]">
       <Header />
       <div className="lg:grid lg:place-items-center 2xl:grid 2xl:place-items-center transition-all ease-in-out">
         <div className="px-8 py-10 lg:w-4/5 2xl:w-3/4">

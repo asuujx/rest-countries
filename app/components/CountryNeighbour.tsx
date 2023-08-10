@@ -22,7 +22,7 @@ const CountryNeighbour = async ({ code }: Props) => {
   // console.log(neighbourData);
 
   return (
-    <div className="bg-white shadow-md py-1 rounded flex place-items-center justify-center text-center lg:px-4 2xl:px-6 transition-all ease-in-out">
+    <div className="bg-white shadow-md py-1 rounded flex place-items-center justify-center text-center lg:px-4 2xl:px-6 transition-all ease-in-out dark:bg-[hsl(209,23%,22%)]">
       <Link href={neighbourData.name.common}>{neighbourData.name.common}</Link>
     </div>
   );

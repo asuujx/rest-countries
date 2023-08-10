@@ -7,7 +7,7 @@ function BackButton() {
   return (
     <div>
       <Link href="/">
-        <div className="flex gap-3 place-items-center bg-white rounded shadow-md w-fit px-8 py-2 mb-20">
+        <div className="flex gap-3 place-items-center bg-white rounded shadow-md w-fit px-8 py-2 mb-20 dark:bg-[hsl(209,23%,22%)]">
           <FontAwesomeIcon icon={faArrowLeft} className="w-3" />
           <p>Back</p>
         </div>
