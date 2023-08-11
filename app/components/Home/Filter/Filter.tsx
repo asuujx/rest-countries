@@ -13,7 +13,7 @@ const Filter = ({ optionHandler }: Props) => {
   const toggleOptions = () => setIsOpen(!isOpen);
 
   return (
-    <div className="relative inline-block mb-10 lg:pt-8 2xl:pt-8">
+    <div className="relative inline-block mb-10 md:pt-8 lg:pt-8 2xl:pt-8">
       <button
         onClick={toggleOptions}
         className="bg-white shadow-md py-4 pl-6 rounded-md w-56 ml-6 flex gap-2 place-content-between dark:dark:bg-[hsl(209,23%,22%)]"

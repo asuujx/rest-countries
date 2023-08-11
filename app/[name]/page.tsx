@@ -1,7 +1,7 @@
 import { CountryDetails } from "@/types";
-import BackButton from "../components/BackButton";
-import CountryDetail from "../components/CountryDetail";
-import CountryNeighbour from "../components/CountryNeighbour";
+import BackButton from "../components/CountryDetails/BackButton";
+import CountryDetail from "../components/CountryDetails/CountryDetail";
+import CountryNeighbour from "../components/CountryDetails/CountryNeighbour";
 import Header from "../components/Header/Header";
 
 type Props = {
@@ -24,12 +24,8 @@ const fetchCountry = async (name: string) => {
 
 const CountryPage = async ({ params: { name } }: Props) => {
   const countryData = (await fetchCountry(name)) as CountryDetails;
-  const countryName = countryData.name.nativeName;
-  const nativeNameCommon = countryName[Object.keys(countryName)[0]];
 
   // console.log(countryData);
-  // console.log(countryName);
-  // console.log(nativeNameCommon.common);
 
   return (
     <div className="bg-[hsl(0,0%,98%)] min-h-screen dark:bg-[hsl(207,26%,17%)] dark:text-[hsl(0,0%,100%)]">
